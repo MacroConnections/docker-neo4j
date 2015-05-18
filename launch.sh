@@ -4,6 +4,11 @@ NEO4J_HOME=/var/lib/neo4j
 
 sed -i "s|#org.neo4j.server.webserver.address=0.0.0.0|org.neo4j.server.webserver.address=$HOSTNAME|g" $NEO4J_HOME/conf/neo4j-server.properties
 
+cat >> $NEO4J_HOME/conf/neo4j-server.properties <<EOF
+elasticsearch.host_name=http://$ES_PORT_9200_TCP_ADDR:$ES_PORT_9200_TCP_PORT
+elasticsearch.index_spec=authors_index:Author(name)
+EOF
+
 # doing this conditionally in case there is already a limit higher than what
 # we're setting here. neo4j recommends at least 40000.
 # 
