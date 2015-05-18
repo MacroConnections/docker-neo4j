@@ -19,7 +19,7 @@ run chmod +x /launch.sh && \
     apt-get clean && \
     sed -i "s|remote_shell_enabled=.+|remote_shell_enabled=true|g" /var/lib/neo4j/conf/neo4j.properties && \
     sed -i "s|data/graph.db|/opt/data/graph.db|g" /var/lib/neo4j/conf/neo4j-server.properties && \
-    sed -i "s|dbms.security.auth_enabled=.+|dbms.security.auth_enabled=false|g" /var/lib/neo4j/conf/neo4j-server.properties && \
+    sed -i "s|auth_enabled=.+|auth_enabled=false|g" /var/lib/neo4j/conf/neo4j-server.properties && \
     echo "remote_shell_host=0.0.0.0" >> /var/lib/neo4j/conf/neo4j.properties
 
 # dbms.security.auth_enabled=false
