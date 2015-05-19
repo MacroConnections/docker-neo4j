@@ -3,7 +3,7 @@
 NEO4J_HOME=/var/lib/neo4j
 
 sed -i "s|#org.neo4j.server.webserver.address=0.0.0.0|org.neo4j.server.webserver.address=0.0.0.0|g" $NEO4J_HOME/conf/neo4j-server.properties
-sed -i "s|auth_enabled=.+|auth_enabled=false|g" $NEO4J_HOME/conf/neo4j-server.properties
+sed -i "s|auth_enabled=.\+|auth_enabled=false|g" $NEO4J_HOME/conf/neo4j-server.properties
 
 cat >> $NEO4J_HOME/conf/neo4j.properties <<EOF
 elasticsearch.host_name=http://$ES_PORT_9200_TCP_ADDR:$ES_PORT_9200_TCP_PORT
