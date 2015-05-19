@@ -7,7 +7,7 @@ sed -i "s|auth_enabled=.\+|auth_enabled=false|g" $NEO4J_HOME/conf/neo4j-server.p
 
 cat >> $NEO4J_HOME/conf/neo4j.properties <<EOF
 elasticsearch.host_name=http://$ES_PORT_9200_TCP_ADDR:$ES_PORT_9200_TCP_PORT
-elasticsearch.index_spec=authors_index:Author(name)
+elasticsearch.index_spec=authors_index:Author(name,id_author_gscholar)
 EOF
 
 # doing this conditionally in case there is already a limit higher than what
